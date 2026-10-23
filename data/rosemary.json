@@ -1,0 +1,13 @@
+{
+    "name": "Rosemary",
+    "family": "Lamiaceae",
+    "description": "Rosemary is a woody, perennial herb with fragrant, evergreen, needle-like leaves and white, pink, purple, or blue flowers, native to the Mediterranean region.",
+    "uses": [
+        "Flavors roasted meats, potatoes, and breads.",
+        "Contains substances that are useful for stimulating the immune system and improving circulation.",
+        "Used in aromatherapy to enhance concentration and memory."
+    ],
+    "image": "images/rosemary.svg",
+    "video": "https://www.youtube.com/watch?v=oEOTayOXzoE",
+    "videoTitle": "The health benefit of rosemary"
+}

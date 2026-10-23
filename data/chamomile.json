@@ -1,0 +1,11 @@
+{
+  "name": "Chamomile",
+  "latin": "Matricaria chamomilla",
+  "use": "A calming cup of tea.",
+  "life": "annual",
+  "description": "Chamomile is a delicate annual with feathery leaves and small white flowers with yellow centres, like little daisies. It sows itself easily and is simple to grow from seed in a sunny spot. Pick the flower heads when they are fully open and dry them for a calming tea.",
+  "image": "images/chamomile.svg",
+  "imageAlt": "Three chamomile flowers with white petals and yellow centres.",
+  "video": "https://www.youtube.com/watch?v=ibXazvct4KI",
+  "videoTitle": "Grow your own tea"
+}

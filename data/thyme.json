@@ -1,0 +1,15 @@
+{
+    "name": "Thyme",
+    "family": "Lamiaceae",
+    "description": "Thyme is the herb (normal vegetative parts) of a species of plants in the genus Thymus, aromatic perennial evergreen herbs used for culinary, medicinal, and ornamental purposes.",
+    "uses": [
+        "A staple ingredient in bouquet garni for stews and soups.",
+        "Possesses natural antibacterial and antifungal properties.",
+        "Soothing for sore throats when brewed as a warm tea."
+    ],
+    "life": "perennial",
+    "image": "images/thyme.svg",
+    "imageAlt": "A thyme sprig with tiny green leaves and small pink flowers.",
+    "video": "https://www.youtube.com/watch?v=aKw6aeDb8r8",
+    "videoTitle": "How to Grow Thyme"
+}

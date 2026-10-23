@@ -2,6 +2,7 @@
 
 :root {
   --leaf: #2f6b3a;
+  --leaf-dark: #245430;
   --leaf-light: #e7f1e4;
   --soil: #5b4636;
   --paper: #fbfaf5;
@@ -25,18 +26,47 @@ a {
   color: var(--leaf);
 }
 
+/* Page width: used by <main> and the footer */
+.container,
+main {
+  max-width: 63rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ---------- Header ---------- */
+
+/* The header itself is the flex row, so this works with or without
+   the extra .header-inner / .brand wrappers in index.html. */
 .site-header {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.5rem;
+  gap: 1.15rem;
+  padding: 1.1rem 1.7rem;
   background: var(--leaf);
   color: white;
 }
 
+.header-inner {
+  display: contents;
+}
+
 .site-header a {
   color: white;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+  width: 48px;
+  height: 48px;
 }
 
 .site-name {
@@ -58,18 +88,19 @@ nav ul {
 }
 
 main {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 1.5rem;
+  padding-top: 4rem;
+  padding-bottom: 1.5rem;
 }
 
 section {
   margin-bottom: 2.5rem;
 }
 
+/* ---------- Home page ---------- */
+
 .intro {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.75rem;
   align-items: center;
 }
 
@@ -117,12 +148,375 @@ section {
   padding: 0.1rem 0.6rem;
   border-radius: 1rem;
   background: var(--leaf-light);
+  border: 1px solid var(--line);
   font-size: 0.875rem;
 }
 
-footer {
-  padding: 1.5rem;
+/* ---------- Visit card ---------- */
+
+#visit {
+  padding-top: 1.5rem;
   border-top: 1px solid var(--line);
+}
+
+#visit h2 {
+  margin-top: 0;
+}
+
+.visit-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: white;
+}
+
+@media (min-width: 40rem) {
+  .visit-card {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+}
+
+.visit-info h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.visit-info p {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+}
+
+.visit-facts {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8rem;
+}
+
+.visit-facts li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot,
+.pin {
+  flex: none;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: var(--leaf);
+}
+
+.dot {
+  border-radius: 50%;
+}
+
+.pin {
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+}
+
+.visit-tours {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--leaf-light);
   text-align: center;
+  font-size: 0.85rem;
+}
+
+.visit-tours .leaf-icon {
+  color: var(--leaf);
+}
+
+.visit-tours span {
+  font-size: 0.8rem;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--line);
   color: var(--soil);
+  font-size: 0.8rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: var(--leaf);
+}
+
+/* ---------- Herb page ---------- */
+
+#herb {
+  padding-top: 0.5rem;
+}
+
+#herb > .back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#herb > .back:hover {
+  text-decoration: underline;
+}
+
+#herb h2 {
+  margin: 0 0 0.25rem;
+  font-size: 2.25rem;
+  line-height: 1.1;
+  color: var(--leaf);
+}
+
+#herb h2:focus {
+  outline: none; /* focus moves here on purpose; the page change is the cue */
+}
+
+.herb-layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (min-width: 40rem) {
+  .herb-layout {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
+
+.herb-figure {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--leaf-light);
+}
+
+.herb-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.switch {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 1rem;
+  background: white;
+  font-size: 0.75rem;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.15);
+}
+
+.switch:hover {
+  background: var(--leaf-light);
+}
+
+.herb-text .latin {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.herb-text .use {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.herb-text .description {
+  margin: 0;
+  max-width: 40rem;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+/* Buttons */
+
+.button {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border: 2px solid var(--leaf);
+  border-radius: 2rem;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button.solid {
+  background: var(--leaf);
+  color: white;
+}
+
+.button.solid:hover {
+  background: var(--leaf-dark);
+}
+
+.button.outline {
+  background: white;
+  color: var(--leaf);
+}
+
+.button.outline:hover,
+.button.outline[aria-pressed="true"] {
+  background: var(--leaf-light);
+}
+
+.button.light {
+  background: white;
+  color: var(--ink);
+  border-color: white;
+}
+
+/* Tabs */
+
+.tabs {
+  margin-top: 1.5rem;
+}
+
+.tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.tab {
+  margin-bottom: -1px;
+  padding: 0.6rem 0.75rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: none;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--soil);
+  cursor: pointer;
+}
+
+.tab:hover {
+  color: var(--leaf);
+}
+
+.tab[aria-selected="true"] {
+  border-bottom-color: var(--leaf);
+  color: var(--leaf);
+  font-weight: 700;
+}
+
+.tab-panel {
+  padding: 1.25rem 0;
+}
+
+.tab-text {
+  margin: 0;
+  max-width: 40rem;
+}
+
+.tab-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  max-width: 40rem;
+}
+
+/* Video guide */
+
+.video-card {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: white;
+}
+
+.video-title {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: #000;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-frame.empty {
+  display: grid;
+  place-content: center;
+  justify-items: start;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: radial-gradient(circle at 80% 60%, #3a1060, #0d0d10 60%);
+  color: white;
+}
+
+.video-note {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* ---------- Focus ---------- */
+
+a:focus-visible,
+button:focus-visible,
+.tab-panel:focus-visible {
+  outline: 3px solid var(--soil);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.site-header a:focus-visible {
+  outline-color: white;
+}
+
+.video-frame.empty .button:focus-visible {
+  outline-color: white;
 }
